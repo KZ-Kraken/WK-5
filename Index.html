@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reyvie Fernando - Personal Home Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Roboto:400,300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-bg: linear-gradient(135deg, #e3f0ff 0%, #fafdff 100%);
+            --primary: #17408B; /* NBA Blue */
+            --accent: #ffffff;  /* White */
+            --card-bg: #fff;
+            --shadow: 0 6px 24px rgba(30,50,80,0.09);
+            --border: #e3eafc;
+            --text-main: #1a2340;
+            --text-light: #6b7a99;
+        }
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: var(--main-bg);
+            min-height: 100vh;
+            color: var(--text-main);
+            position: relative;
+        }
+        .hero, .profile-card, .container, footer {
+            position: relative;
+            z-index: 1;
+        }
+        .hero {
+            text-align: center;
+            padding: 56px 0 28px 0;
+            color: var(--primary);
+            background: var(--accent);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero h1 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.8em;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.25em;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin: -40px auto 24px auto;
+            padding: 36px 24px 24px 24px;
+            max-width: 370px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            margin: -80px auto 8px auto;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(31,162,255,0.08);
+        }
+        .profile-card h2 {
+            margin: 8px 0 6px 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.4em;
+            color: var(--primary);
+        }
+        .profile-card p {
+            margin: 0;
+        }
+        .profile-card .schools {
+            font-size: 1em;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+        .profile-card .quote {
+            font-style: italic;
+            color: var(--primary);
+            margin-top: 18px;
+            font-size: 1.05em;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 16px 32px 16px;
+        }
+        .sidebar {
+            flex: 1 1 220px;
+            max-width: 260px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 28px 22px;
+            margin-top: 16px;
+            border: 1px solid var(--border);
+            height: fit-content;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.15em;
+            letter-spacing: 1px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .sidebar li {
+            margin-bottom: 12px;
+            font-size: 1.08em;
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+            transition: color 0.2s;
+        }
+        .sidebar li:hover {
+            color: var(--primary);
+        }
+        .sidebar li::before {
+            content: "•";
+            margin-right: 10px;
+            font-size: 1.3em;
+            color: var(--primary);
+        }
+        .sidebar .skills {
+            margin-top: 24px;
+        }
+        .sidebar .skill-bar {
+            background: #e3eafc;
+            border-radius: 5px;
+            height: 10px;
+            overflow: hidden;
+            margin-bottom: 14px;
+        }
+        .sidebar .skill-level {
+            background: linear-gradient(90deg, #17408B 60%, #3c6fd8 100%);
+            height: 10px;
+            border-radius: 5px;
+        }
+        .main {
+            flex: 2 1 450px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 36px 36px 28px 36px;
+            margin-top: 16px;
+            border: 1px solid var(--border);
+        }
+        .main h2, .main h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .main table {
+            width: 100%;
+            margin-bottom: 18px;
+            border-collapse: collapse;
+            background: #fafdff;
+            border-radius: 7px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .main th, .main td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e6e6e6;
+            text-align: left;
+        }
+        .main th {
+            background: #e3f0ff;
+            color: var(--primary);
+        }
+        .main tr:last-child td {
+            border-bottom: none;
+        }
+        .goals, .favorite, .funfact {
+            margin-bottom: 22px;
+        }
+        .favorite a {
+            color: var(--primary);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .favorite a:hover {
+            text-decoration: underline;
+        }
+        .funfact {
+            background: #e3f0ff;
+            padding: 14px 18px;
+            border-radius: 8px;
+            color: var(--primary);
+            font-size: 1.05em;
+        }
+        .contact-section {
+            margin-top: 26px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            background: #fafdff;
+            padding: 18px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(31,162,255,0.06);
+            max-width: 420px;
+            border: 1px solid var(--border);
+        }
+        label {
+            margin-top: 10px;
+            margin-bottom: 2px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        input[type="text"], input[type="email"], textarea {
+            padding: 9px;
+            margin-bottom: 8px;
+            border: 1px solid #b1d9f7;
+            border-radius: 4px;
+            font-size: 1em;
+            background: #fff;
+            color: var(--text-main);
+        }
+        input[type="submit"] {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 11px 0;
+            border-radius: 4px;
+            font-size: 1.08em;
+            cursor: pointer;
+            margin-top: 6px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: bold;
+            transition: background 0.18s;
+        }
+        input[type="submit"]:hover {
+            background: #3c6fd8;
+        }
+        .socials {
+            margin-top: 16px;
+            display: flex;
+            gap: 14px;
+        }
+        .socials a {
+            display: inline-flex;
+            width: 36px;
+            height: 36px;
+            align-items: center;
+            justify-content: center;
+            background: #e3f0ff;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(31,162,255,0.05);
+            color: var(--primary);
+            font-size: 1.3em;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .socials a:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+        footer {
+            text-align: center;
+            padding: 26px 0 10px 0;
+            color: var(--primary);
+            font-size: 1.04em;
+            font-family: 'Montserrat', Arial, sans-serif;
+            letter-spacing: 2px;
+            background: var(--accent);
+            border-top: 1px solid var(--border);
+            margin-top: 32px;
+        }
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .sidebar, .main {
+                width: 98%;
+                max-width: 600px;
+            }
+        }
+    </style>
+    <script>
+        // Animate skill bars on load
+        window.onload = function() {
+            document.querySelectorAll('.skill-level').forEach(function(bar) {
+                let width = bar.getAttribute('data-level');
+                bar.style.width = '0';
+                setTimeout(function() {
+                    bar.style.width = width;
+                    bar.style.transition = 'width 1.1s cubic-bezier(.77,0,.18,1)';
+                }, 400);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="hero">
+        <h1>Reyvie Fernando</h1>
+        <p>Web Enthusiast &amp; IT Student | Bringing Ideas to Life</p>
+    </div>
+    <div class="profile-card">
+        <img src="vie.png" alt="Profile Photo">
+        <h2>Reyvie Fernando</h2>
+        <div class="schools">
+            <div><b>SHS:</b> New Era University</div>
+            <div><b>JHS:</b> Ernesto Rondon High School</div>
+        </div>
+        <p class="quote">“Strive not to be a success, but rather to be of value.”</p>
+    </div>
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Hobbies & Interests</h3>
+            <ul>
+                <li>Programming</li>
+                <li>Web Design</li>
+                <li>Playing Chess</li>
+                <li>Reading Tech News</li>
+                <li>Playing Guitar</li>
+                <li>Watching Movies</li>
+            </ul>
+            <div class="skills">
+                <h3>Skills</h3>
+                <div>HTML <div class="skill-bar"><div class="skill-level" data-level="92%"></div></div></div>
+                <div>CSS <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div></div>
+                <div>JavaScript <div class="skill-bar"><div class="skill-level" data-level="70%"></div></div></div>
+                <div>Python <div class="skill-bar"><div class="skill-level" data-level="60%"></div></div></div>
+            </div>
+        </aside>
+        <main class="main">
+            <h2>About Me</h2>
+            <p>Hello! My name is Reyvie Fernando. I am a second-year IT student with a passion for programming, web design, and exploring new technologies. I enjoy building things for the web and learning something new every day.</p>
+            <table>
+                <tr><th>Age</th><td>20 years old</td></tr>
+                <tr><th>Date of Birth</th><td>June 15, 2005</td></tr>
+                <tr><th>Location</th><td>Manila, Philippines</td></tr>
+            </table>
+            <div class="goals">
+                <h3>My Goals</h3>
+                <ol>
+                    <li>Improve my coding skills</li>
+                    <li>Build personal projects</li>
+                    <li>Become a professional web developer</li>
+                </ol>
+            </div>
+            <div class="favorite">
+                <h3>Favorite Website</h3>
+                <p>Visit <a href="https://www.w3schools.com/" target="_blank">W3Schools</a> for web dev learning.</p>
+                <p>Portfolio: <a href="https://your-username.github.io/your-repo-name/" target="_blank">My Website</a></p>
+            </div>
+            <div class="funfact">
+                <b>Fun Fact:</b> I once built a website in a single weekend that helped my friends learn chess!
+            </div>
+            <div class="contact-section">
+                <h2>Contact Me</h2>
+                <form action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <input type="submit" value="Send">
+                </form>
+                <div class="socials">
+                    <a href="mailto:your@email.com" title="Email"><span>&#9993;</span></a>
+                    <a href="https://github.com/your-github" target="_blank" title="GitHub"><span>GH</span></a>
+                    <a href="https://www.facebook.com/your-profile" target="_blank" title="Facebook"><span>FB</span></a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        &copy; 2025 Reyvie Fernando | Designed with passion ✨
+    </footer>
+</body>
+</html>
